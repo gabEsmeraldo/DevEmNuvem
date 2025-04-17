@@ -17,7 +17,7 @@ app.get("/rota02", function(req,res){
 })
 
 //rota com parametro 
-app.get("/rotas/:parametro", function(req,res){
+app.get("/rota/:parametro", function(req,res){
     res.send("Essa rota leva para: " + req.params.parametro);
 })
 
