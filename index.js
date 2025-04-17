@@ -3,34 +3,25 @@ const app = express(); //iniciando o express
 
 //criando a rota inicial
 app.get("/", function(req,res){
-    res.send("<h1>Bem vindo ao meu site!</h1>");
+    res.send("<h1>Está funcionando!</h1>");
 })
 
-//rota do cadastro de produtos
-app.get("/produtos", function(req,res){
-    res.send("<h1>Lista de Produtos!</h1>");
+//rota 01
+app.get("/rota01", function(req,res){
+    res.send("<h1>Essa é a primeira rota!</h1>");
+})
+
+//rota 02
+app.get("/rota02", function(req,res){
+    res.send("<h1>Essa é a terceira rota!</h1>");
 })
 
 //rota com parametro 
-app.get("/consulta/:parametro", function(req,res){
-    //req --> dados enviados pelo cliente
-    //res --> resposta enviada pelo servidor de volta ao cliente
-    res.send("retorno consulta:" + req.params.parametro);
+app.get("/rotas/:parametro", function(req,res){
+    res.send("Essa rota leva para: " + req.params.parametro);
 })
 
-//rota com parametro opcional
-/* app.get("/cadastro/:nome?", function(req,res){
-    //req --> dados enviados pelo cliente
-    var nome = req.params.nome;
-    if (nome){
-        res.send("<h1>produto " + nome + " criado!</h1>");
-    }else{
-        res.send("produto criado!");
-    }
-    
-}) */
-
-app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicaÃ§Ã£o na porta 4000
+app.listen(process.env.PORT ?? 3000,function(erro){  // cria a aplicaÃ§Ã£o na porta 3000
     if (erro){
         console.log("Erro ao Iniciar.");
     }else{
