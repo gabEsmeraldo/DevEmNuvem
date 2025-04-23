@@ -13,7 +13,7 @@ app.get("/rota01", function(req,res){
 
 //rota 02
 app.get("/rota02", function(req,res){
-    res.send("<h1>Essa é a terceira rota!</h1>");
+    res.send("<h1>Essa é a segunda rota!</h1>");
 })
 
 //rota com parametro 
